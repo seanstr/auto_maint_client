@@ -1,0 +1,34 @@
+<div class="jumbotron">
+  <div class="container">
+  </div>
+</div>
+
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <ul class="nav nav-tabs">
+        <li><a href="/#!/viewListAutomobiles">{{automobileTitle}}</a></li>
+        <li class="active"><a href="/#!/viewListMaintenanceTasks">{{maintTaskTitle}}</a></li>
+      </ul>
+    </div>
+    <div class="panel-body">
+      <div class="row maintenance_task-list">
+        <div class="panel-link col-xs-4 col-md-3" ng-repeat="task in maintenance_tasks | orderBy:'name'">
+          <div class="panel-link">
+            <a href="/#!/viewMaintenanceTaskDetails/{{task.id}}">
+              <span>Name:</span>{{task.name}}<br/>
+              <span>Description:</span>{{task.description}}<br/>
+              <span>Suitable for:</span><br/>
+              &nbsp;&nbsp;<span>Gasoline:</span>{{task.suitable_for_gasoline}}<br/>
+              &nbsp;&nbsp;<span>Diesel:</span>{{task.suitable_for_diesel}}<br/>
+              &nbsp;&nbsp;<span>Electric:</span>{{task.suitable_for_electrical}}<br/>
+            </a>
+            <span>
+              <button class="btn btn-link" ng-click="Delete(task.id)">Delete</button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

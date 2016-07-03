@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="media">
+        <div class="media-body">
+          <h2 class="media-heading">
+            Maintenance Task Details
+          </h2>
+          <ul>
+            <li>Name: {{maintenance_task.name}}</li>
+            <li>Description: {{maintenance_task.description}}</li>
+            <li>Suitable for Gasoline: {{maintenance_task.suitable_for_gasoline}}</li>
+            <li>Suitable for Diesel: {{maintenance_task.suitable_for_diesel}}</li>
+            <li>Suitable for Electric: {{maintenance_task.suitable_for_electrical}}</li>
+          </ul>
+          <a href="/#!/editMaintenanceTask/{{maintenance_task.id}}">Edit</a></li>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

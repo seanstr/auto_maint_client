@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="media">
+        <div class="media-body">
+          <h2 class="media-heading">
+            Auto Details - {{auto_type}}
+          </h2>
+          <ul>
+            <li>Make: {{automobile.make}}</li>
+            <li>Model: {{automobile.model}}</li>
+            <li>Year: {{automobile.year}}</li>
+            <li>Odometer: {{automobile.odometer_reading}}</li>
+          </ul>
+          <a href="/#!/editAutomobile/{{auto_type}}/{{automobile.id}}">Edit</a></li>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <span class="glyphicon glyphicon-play"></span> Maintenance Tasks
+    </div>
+     <form class="form" method="post" ng-submit="updAutoMaintTasks(auto_type,automobile.id)" 
+          ng-controller="AutoMaintTaskCtrl" name="updAutoMaintTaskForm">
+      <div class="panel-body">
+        <div class="maint_task" ng-repeat="task in automobile_tasks">
+          <h4>
+            <input type="checkbox" ng-model="task.selected" value="{{task.id}}">
+            <small>{{task.name}}, {{task.description}}</small>
+          </h4>
+        </div>
+      </div>
+      <button class="btn btn-primary" id="submit" type="submit">Add Task(s)</button>
+    </form>
+  </div>
+</div>

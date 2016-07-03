@@ -1,0 +1,65 @@
+<div class="form-group">
+  <select class="form-control input-lg" data-ng-model="automobile.fuel_mode" 
+      placeholder="Automobile Type" 
+      name="fuel_mode" required autofocus>
+    <option value="">
+    <option value="Gasoline">Gasoline
+    <option value="Diesel">Diesel
+    <option value="Electric">Electric
+  </select>
+
+  <div class="help-block text-danger" ng-if="fuel_mode.$dirty"
+       ng-messages="addAutoForm.fuel_mode.$error">
+    <div ng-message="required">Automobile type is required.</div>
+  </div>
+</div>
+
+<div class="form-group"
+     ng-class="{ 'has-success' : addAutoForm.make.$valid && addAutoForm.make.$dirty, 'has-error' : addAutoForm.make.$invalid && addAutoForm.make.$dirty }">
+  <input class="form-control input-lg" type="text" name="make"
+         ng-model="automobile.make" placeholder="Make" required>
+
+  <div class="help-block text-danger"
+       ng-if="addAutoForm.make.$dirty"
+       ng-messages="addAutoForm.make.$error">
+    <div ng-message="required">Make is required.</div>
+  </div>
+</div>
+
+  <div class="form-group"
+       ng-class="{ 'has-success' : addAutoForm.model.$valid && addAutoForm.model.$dirty, 'has-error' : addAutoForm.model.$invalid && addAutoForm.model.$dirty }">
+    <input class="form-control input-lg" type="text" name="model"
+           ng-model="automobile.model" placeholder="Model" required>
+
+    <div class="help-block text-danger"
+         ng-if="addAutoForm.model.$dirty"
+         ng-messages="addAutoForm.model.$error">
+      <div ng-message="required">Model is required.</div>
+    </div>
+  </div>
+
+  <div class="form-group"
+       ng-class="{ 'has-success' : addAutoForm.year.$valid && addAutoForm.year.$dirty, 'has-error' : addAutoForm.year.$invalid && addAutoForm.year.$dirty }">
+    <input class="form-control input-lg" type="text" name="year" type="number"
+           ng-model="automobile.year" placeholder="Year" required>
+
+    <div class="help-block text-danger"
+         ng-if="addAutoForm.year.$dirty"
+         ng-messages="addAutoForm.year.$error">
+      <div ng-message="required">Year is required.</div>
+    </div>
+  </div>
+
+  <div class="form-group"
+       ng-class="{ 'has-success' : addAutoForm.odometer.$valid && addAutoForm.odometer.$dirty, 'has-error' : addAutoForm.odometer.$invalid && addAutoForm.odometer.$dirty }">
+    <input class="form-control input-lg" type="text" name="odometer" type="number"
+           ng-model="automobile.odometer_reading" placeholder="Odometer" required>
+
+    <div class="help-block text-danger"
+         ng-if="addAutoForm.odometer.$dirty"
+         ng-messages="addAutoForm.odometer.$error">
+      <div ng-message="required">Odometer reading is required.</div>
+    </div>
+  </div>
+
+<button class="btn btn-primary" type="submit" ng-disabled="addAutoForm.$invalid">Submit</button>

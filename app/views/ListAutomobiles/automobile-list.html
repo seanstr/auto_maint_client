@@ -1,0 +1,72 @@
+<div class="jumbotron">
+  <div class="container">
+  </div>
+</div>
+
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="/#!/views/viewListAutomobiles">{{automobileTitle}}</a></li>
+        <li><a href="/#!/viewListMaintenanceTasks">{{maintTaskTitle}}</a></li>
+      </ul>
+    </div>
+    <div class="panel-body">
+      <div class="panel-group">
+        <span>Gasoline</span>
+        <div class="row gasoline-list">
+          <div class="panel-link col-xs-4 col-md-3" ng-repeat="auto in gasoline | orderBy:['make', 'model', 'year']">
+            <div class="panel-link">
+              <!-- <a href="/gasoline/{{auto.id}}"> -->
+              <a href="/#!/viewAutomobileDetails/Gasoline/{{auto.id}}">
+                <span>Make:</span>{{auto.make}}<br/>
+                <span>Model:</span>{{auto.model}}<br/>
+                <span>Year:</span>{{auto.year}}<br/>
+                <span>Odometer:</span>{{auto.odometer_reading}}<br/>
+              </a>
+              <span>
+                <button class="btn btn-link" ng-click="Delete('Gasoline', auto.id)">Delete</button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel-group">
+        <span>Diesel</span>
+        <div class="row automobile-list">
+          <div class="panel-link col-xs-4 col-md-3" ng-repeat="auto in diesel | orderBy:'make'">
+            <div class="panel-link">
+              <a href="/#!/viewAutomobileDetails/Diesel/{{auto.id}}">
+                <span>Make:</span>{{auto.make}}<br/>
+                <span>Model:</span>{{auto.model}}<br/>
+                <span>Year:</span>{{auto.year}}<br/>
+                <span>Odometer:</span>{{auto.odometer_reading}}<br/>
+                <span>
+                  <button class="btn btn-link" ng-click="Delete('Diesel', auto.id)">Delete</button>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel-group">
+        <span>Electric</span>
+        <div class="row automobile-list">
+          <div class="panel-link col-xs-4 col-md-3" ng-repeat="auto in electric | orderBy:'make'">
+            <div class="panel-link">
+              <a href="/#!/viewAutomobileDetails/Electric/{{auto.id}}">
+                <span>Make:</span>{{auto.make}}<br/>
+                <span>Model:</span>{{auto.model}}<br/>
+                <span>Year:</span>{{auto.year}}<br/>
+                <span>Odometer:</span>{{auto.odometer_reading}}<br/>
+                <span>
+                  <button class="btn btn-link" ng-click="Delete('Electric', auto.id)">Delete</button>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

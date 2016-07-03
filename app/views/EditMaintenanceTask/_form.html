@@ -1,0 +1,27 @@
+<div class="form-group"
+     ng-class="{ 'has-success' : addMaintTask.name.$valid && addMaintTask.name.$dirty, 'has-error' : addMaintTask.name.$invalid && addMaintTask.name.$dirty }">
+  <input class="form-control input-lg" type="text" name="name"
+         ng-model="$parent.maintenance_task.name" placeholder="Name" required>
+  <div class="help-block text-danger"
+       ng-if="addMaintTask.name.$dirty"
+       ng-messages="addMaintTask.name.$error">
+    <div ng-message="required">Name is required.</div>
+  </div>
+</div>
+  <div class="form-group"">
+    <input class="form-control input-lg" type="text" name="description"
+           ng-model="$parent.maintenance_task.description" placeholder="Description">
+  </div>
+  <div class="form-group">
+    Suitable for:
+    <label>
+      <input class="form-control input-lg" type="checkbox" ng-model="$parent.maintenance_task.suitable_for_gasoline">Gasoline
+    </label>
+    <label>
+      <input class="form-control input-lg" type="checkbox" ng-model="$parent.maintenance_task.suitable_for_diesel">Diesel
+    </label>
+    <label>
+      <input class="form-control input-lg" type="checkbox" ng-model="$parent.maintenance_task.suitable_for_electrical">Electric
+    </label>
+  </div>
+<button class="btn btn-primary" type="submit" ng-disabled="addMainTtask.$invalid">Submit</button>
